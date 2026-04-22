@@ -6,15 +6,7 @@
 <title>Roopa Gangadhar Devihosur</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
-:root {
-  --accent: #2563EB;
-  --accent2: #7C3AED;
-  --gold: #B45309;
-  --glass-bg: rgba(255,255,255,0.28);
-  --glass-border: rgba(255,255,255,0.55);
-  --glass-hover: rgba(255,255,255,0.42);
-  --text-dark: #1e1b4b;
-}
+:root{--accent:#2563EB;--accent2:#7C3AED;--gold:#B45309;--glass-bg:rgba(255,255,255,0.28);--glass-border:rgba(255,255,255,0.55);--glass-hover:rgba(255,255,255,0.42);--text-dark:#1e1b4b;}
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{font-family:'DM Sans',sans-serif;background:#dbeafe;color:var(--text-dark);overflow-x:hidden;min-height:100vh;}
@@ -29,58 +21,79 @@ body{font-family:'DM Sans',sans-serif;background:#dbeafe;color:var(--text-dark);
 @keyframes meshMove{0%{filter:hue-rotate(0deg);}100%{filter:hue-rotate(25deg);}}
 .page{display:none;position:relative;z-index:1;min-height:100vh;}
 .page.active{display:block;}
+
+/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:16px 56px;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.35);backdrop-filter:blur(24px);border-bottom:1px solid rgba(255,255,255,0.5);}
-.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:18px;letter-spacing:-0.5px;color:var(--text-dark);text-decoration:none;cursor:pointer;}
+.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:18px;letter-spacing:-0.5px;color:var(--text-dark);cursor:pointer;}
 .nav-logo span{color:var(--accent);}
 .nav-links{display:flex;gap:8px;list-style:none;}
 .nav-links button{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:400;letter-spacing:0.4px;color:rgba(30,27,75,0.65);background:none;border:none;cursor:pointer;padding:7px 16px;border-radius:100px;transition:all 0.2s;text-transform:uppercase;}
 .nav-links button:hover,.nav-links button.active-nav{background:rgba(255,255,255,0.5);color:var(--text-dark);}
 .nav-cta{padding:9px 22px !important;background:var(--accent) !important;color:#fff !important;border-radius:100px !important;}
-.nav-cta:hover{opacity:0.88 !important;background:var(--accent) !important;}
+.nav-cta:hover{opacity:0.88 !important;}
+
+/* GLASS CARD */
 .glass-card{background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:20px;backdrop-filter:blur(20px);transition:background 0.25s,border-color 0.25s,transform 0.25s,box-shadow 0.25s;}
 .glass-card:hover{background:var(--glass-hover);border-color:rgba(255,255,255,0.75);transform:translateY(-3px);box-shadow:0 16px 48px rgba(124,58,237,0.12);}
 
-/* HERO */
-#home .hero{min-height:100vh;display:grid;grid-template-columns:1fr 400px;align-items:center;gap:56px;padding:140px 56px 80px;max-width:1200px;margin:0 auto;}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;background:rgba(37,99,235,0.12);border:1px solid rgba(37,99,235,0.28);border-radius:100px;font-size:12px;font-weight:500;letter-spacing:1px;color:var(--accent);text-transform:uppercase;margin-bottom:26px;width:fit-content;animation:fadeUp 0.8s ease both;}
+/* HERO — photo on top, centered, then name below */
+#home .hero{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:130px 56px 80px;
+  max-width:900px;
+  margin:0 auto;
+}
+
+/* PHOTO */
+.photo-wrap{position:relative;width:180px;height:180px;margin-bottom:32px;animation:fadeUp 0.8s ease both;}
+.photo-ring{position:absolute;inset:-12px;border-radius:50%;border:2px dashed rgba(37,99,235,0.3);animation:spin 18s linear infinite;}
+.photo-ring::before{content:'';position:absolute;top:-5px;left:50%;transform:translateX(-50%);width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 14px var(--accent);}
+.photo-ring2{position:absolute;inset:-24px;border-radius:50%;border:1.5px dashed rgba(124,58,237,0.2);animation:spin 28s linear infinite reverse;}
+.photo-ring2::before{content:'';position:absolute;bottom:-5px;left:50%;transform:translateX(-50%);width:7px;height:7px;border-radius:50%;background:var(--accent2);box-shadow:0 0 10px var(--accent2);}
+@keyframes spin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+.photo-circle{width:180px;height:180px;border-radius:50%;overflow:hidden;position:relative;z-index:1;border:3px solid rgba(255,255,255,0.8);box-shadow:0 12px 48px rgba(37,99,235,0.2),0 4px 16px rgba(0,0,0,0.08);background:#c7d2fe;}
+.photo-circle img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;}
+
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;background:rgba(37,99,235,0.12);border:1px solid rgba(37,99,235,0.28);border-radius:100px;font-size:12px;font-weight:500;letter-spacing:1px;color:var(--accent);text-transform:uppercase;margin-bottom:20px;animation:fadeUp 0.8s 0.1s ease both;}
 .hero-badge::before{content:'';width:6px;height:6px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite;}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.4;transform:scale(0.8);}}
-.hero-name{font-family:'Syne',sans-serif;font-size:clamp(28px,3.4vw,52px);font-weight:800;line-height:1.05;letter-spacing:-1.5px;margin-bottom:22px;white-space:nowrap;animation:fadeUp 0.8s 0.1s ease both;color:transparent;background:linear-gradient(135deg,rgba(30,27,75,0.92) 0%,rgba(37,99,235,0.85) 50%,rgba(124,58,237,0.9) 100%);-webkit-background-clip:text;background-clip:text;}
-.hero-desc{font-size:15px;line-height:1.75;color:rgba(30,27,75,0.65);font-weight:300;max-width:500px;margin-bottom:36px;animation:fadeUp 0.8s 0.2s ease both;}
-.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:48px;animation:fadeUp 0.8s 0.3s ease both;}
-.btn-primary{padding:13px 30px;background:var(--accent);color:#fff;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;border-radius:100px;text-decoration:none;border:none;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 4px 20px rgba(37,99,235,0.3);}
+
+.hero-name{font-family:'Syne',sans-serif;font-size:clamp(32px,4.5vw,64px);font-weight:800;line-height:1.05;letter-spacing:-2px;margin-bottom:18px;animation:fadeUp 0.8s 0.15s ease both;color:transparent;background:linear-gradient(135deg,rgba(30,27,75,0.92) 0%,rgba(37,99,235,0.85) 50%,rgba(124,58,237,0.9) 100%);-webkit-background-clip:text;background-clip:text;}
+
+.hero-desc{font-size:16px;line-height:1.75;color:rgba(30,27,75,0.65);font-weight:300;max-width:580px;margin:0 auto 36px;animation:fadeUp 0.8s 0.2s ease both;}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-bottom:52px;animation:fadeUp 0.8s 0.3s ease both;}
+.btn-primary{padding:13px 30px;background:var(--accent);color:#fff;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;border-radius:100px;border:none;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 4px 20px rgba(37,99,235,0.3);}
 .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(37,99,235,0.4);}
 .btn-ghost{padding:13px 30px;background:var(--glass-bg);border:1px solid var(--glass-border);color:var(--text-dark);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:400;border-radius:100px;backdrop-filter:blur(10px);transition:background 0.2s;cursor:pointer;}
 .btn-ghost:hover{background:var(--glass-hover);}
-.hero-stats{display:flex;gap:36px;padding-top:32px;border-top:1px solid rgba(30,27,75,0.1);animation:fadeUp 0.8s 0.4s ease both;}
+
+.hero-stats{display:flex;gap:48px;padding-top:36px;border-top:1px solid rgba(30,27,75,0.1);justify-content:center;animation:fadeUp 0.8s 0.4s ease both;}
 .stat-val{font-family:'Syne',sans-serif;font-size:28px;font-weight:800;letter-spacing:-1px;color:var(--text-dark);}
 .stat-val span{color:var(--accent);}
 .stat-label{font-size:11px;color:rgba(30,27,75,0.4);text-transform:uppercase;letter-spacing:1px;margin-top:3px;}
 
-/* PHOTO */
-.hero-right{display:flex;justify-content:center;align-items:center;animation:fadeUp 0.8s 0.2s ease both;}
-.photo-wrap{position:relative;width:320px;height:320px;}
-.photo-ring{position:absolute;inset:-14px;border-radius:50%;border:2px dashed rgba(37,99,235,0.3);animation:spin 18s linear infinite;}
-.photo-ring::before{content:'';position:absolute;top:-5px;left:50%;transform:translateX(-50%);width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 14px var(--accent);}
-.photo-ring2{position:absolute;inset:-28px;border-radius:50%;border:1.5px dashed rgba(124,58,237,0.2);animation:spin 28s linear infinite reverse;}
-.photo-ring2::before{content:'';position:absolute;bottom:-5px;left:50%;transform:translateX(-50%);width:7px;height:7px;border-radius:50%;background:var(--accent2);box-shadow:0 0 10px var(--accent2);}
-@keyframes spin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
-.photo-circle{width:320px;height:320px;border-radius:50%;overflow:hidden;position:relative;z-index:1;border:3px solid rgba(255,255,255,0.75);box-shadow:0 16px 60px rgba(37,99,235,0.18),0 4px 20px rgba(0,0,0,0.08);background:#c7d2fe;}
-.photo-circle img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;}
-
 /* WORKED WITH */
-.worked-with{padding:36px 56px;max-width:1200px;margin:0 auto;border-top:1px solid rgba(30,27,75,0.08);}
-.worked-label{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(30,27,75,0.38);margin-bottom:18px;}
-.worked-logos{display:flex;gap:10px;flex-wrap:wrap;}
-.worked-logo{padding:8px 18px;background:rgba(255,255,255,0.45);border:1px solid rgba(255,255,255,0.65);border-radius:10px;backdrop-filter:blur(10px);font-size:13px;color:rgba(30,27,75,0.65);font-weight:400;}
-.nav-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:40px 56px;max-width:1200px;margin:0 auto;}
+.worked-with{padding:36px 56px;max-width:1100px;margin:0 auto;border-top:1px solid rgba(30,27,75,0.08);}
+.worked-label{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(30,27,75,0.38);margin-bottom:18px;text-align:center;}
+.worked-logos{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}
+.worked-logo{padding:8px 18px;background:rgba(255,255,255,0.45);border:1px solid rgba(255,255,255,0.65);border-radius:10px;backdrop-filter:blur(10px);font-size:13px;color:rgba(30,27,75,0.65);}
+
+/* NAV CARDS */
+.nav-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:40px 56px;max-width:1100px;margin:0 auto;}
 .nav-card{padding:28px 28px;cursor:pointer;text-align:center;display:flex;flex-direction:column;align-items:center;gap:12px;}
 .nav-card-icon{font-size:32px;}
 .nav-card-title{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;color:var(--text-dark);letter-spacing:-0.4px;}
 .nav-card-desc{font-size:13px;color:rgba(30,27,75,0.6);line-height:1.6;font-weight:300;}
-.nav-card-arrow{font-size:13px;color:var(--accent);font-weight:500;margin-top:4px;transition:transform 0.2s;}
+.nav-card-arrow{font-size:13px;color:var(--accent);font-weight:500;transition:transform 0.2s;}
 .nav-card:hover .nav-card-arrow{transform:translateX(4px);}
-.home-section{padding:64px 56px 80px;max-width:1200px;margin:0 auto;}
+
+/* HOME SECTIONS */
+.home-section{padding:64px 56px 80px;max-width:1100px;margin:0 auto;}
 .sec-eye{font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:10px;}
 .sec-title{font-family:'Syne',sans-serif;font-size:clamp(22px,3vw,34px);font-weight:700;letter-spacing:-1px;line-height:1.1;margin-bottom:32px;color:var(--text-dark);}
 .sec-title .dim{color:rgba(30,27,75,0.5);font-weight:400;font-style:italic;}
@@ -92,13 +105,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:16px 56px;display:fl
 .exp-period{font-size:12px;color:rgba(30,27,75,0.38);text-align:right;white-space:nowrap;font-weight:300;}
 .exp-award{display:inline-flex;align-items:center;gap:6px;margin-top:12px;padding:4px 13px;background:rgba(180,83,9,0.07);border:1px solid rgba(180,83,9,0.18);border-radius:100px;font-size:11px;color:var(--gold);font-weight:500;}
 .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:13px;}
-.skill-card{padding:20px 20px;}
+.skill-card{padding:20px;}
 .skill-icon-box{width:32px;height:32px;background:rgba(37,99,235,0.1);border:1px solid rgba(37,99,235,0.2);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;margin-bottom:10px;}
 .skill-title{font-family:'Syne',sans-serif;font-size:13px;font-weight:600;color:var(--text-dark);margin-bottom:5px;}
 .skill-items{font-size:12px;color:rgba(30,27,75,0.6);line-height:1.8;font-weight:300;}
 
 /* INNER PAGES */
-.page-inner{padding:110px 56px 80px;max-width:1200px;margin:0 auto;}
+.page-inner{padding:110px 56px 80px;max-width:1100px;margin:0 auto;}
 .page-back{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--accent);font-weight:500;cursor:pointer;margin-bottom:36px;background:none;border:none;font-family:'DM Sans',sans-serif;padding:0;transition:gap 0.2s;}
 .page-back:hover{gap:12px;}
 .page-header-eyebrow{font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:12px;}
@@ -111,7 +124,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:16px 56px;display:fl
 .win-desc{font-size:13px;color:rgba(30,27,75,0.6);font-weight:300;}
 .win-tag{margin-left:auto;flex-shrink:0;padding:5px 14px;background:rgba(180,83,9,0.08);border:1px solid rgba(180,83,9,0.2);border-radius:100px;font-size:12px;color:var(--gold);font-weight:500;white-space:nowrap;}
 .featured-project{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:24px;overflow:hidden;border-radius:20px;border:1px solid var(--glass-border);backdrop-filter:blur(20px);background:var(--glass-bg);}
-.fp-content{padding:36px 36px;}
+.fp-content{padding:36px;}
 .fp-visual{background:linear-gradient(135deg,rgba(37,99,235,0.15),rgba(124,58,237,0.1));display:flex;align-items:center;justify-content:center;font-size:80px;min-height:220px;}
 .fp-tag{display:inline-block;padding:4px 12px;background:rgba(37,99,235,0.1);border:1px solid rgba(37,99,235,0.2);border-radius:100px;font-size:11px;color:var(--accent);font-weight:500;letter-spacing:0.5px;text-transform:uppercase;margin-bottom:14px;}
 .fp-title{font-family:'Syne',sans-serif;font-size:22px;font-weight:700;letter-spacing:-0.5px;color:var(--text-dark);margin-bottom:10px;}
@@ -121,7 +134,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:16px 56px;display:fl
 .fp-link{font-size:13px;color:var(--accent);text-decoration:none;font-weight:500;display:inline-flex;align-items:center;gap:5px;transition:gap 0.2s;}
 .fp-link:hover{gap:9px;}
 .projects-mini-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:24px;}
-.mini-card{padding:24px 24px;}
+.mini-card{padding:24px;}
 .mini-tag{display:inline-block;padding:3px 10px;background:rgba(124,58,237,0.08);border:1px solid rgba(124,58,237,0.18);border-radius:100px;font-size:11px;color:var(--accent2);font-weight:500;letter-spacing:0.3px;text-transform:uppercase;margin-bottom:12px;}
 .mini-title{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:var(--text-dark);margin-bottom:8px;letter-spacing:-0.3px;}
 .mini-desc{font-size:13px;color:rgba(30,27,75,0.6);line-height:1.65;font-weight:300;margin-bottom:14px;}
@@ -145,7 +158,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:16px 56px;display:fl
 .award-org-big{font-size:13px;color:var(--accent2);font-weight:500;margin-bottom:10px;}
 .award-year{display:inline-block;padding:4px 12px;background:rgba(30,27,75,0.06);border:1px solid rgba(30,27,75,0.12);border-radius:100px;font-size:11px;color:rgba(30,27,75,0.5);margin-bottom:12px;}
 .award-desc-big{font-size:13px;color:rgba(30,27,75,0.6);line-height:1.65;font-weight:300;}
-.award-timeline{margin-top:20px;display:flex;flex-direction:column;gap:16px;}
+.award-timeline{display:flex;flex-direction:column;gap:16px;}
 .timeline-item{display:flex;gap:20px;align-items:flex-start;padding:20px 24px;}
 .timeline-dot{width:10px;height:10px;border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:5px;box-shadow:0 0 10px rgba(37,99,235,0.4);}
 .timeline-year{font-size:12px;color:rgba(30,27,75,0.4);font-weight:300;white-space:nowrap;min-width:60px;}
@@ -156,7 +169,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:16px 56px;display:fl
 .contact-title{font-family:'Syne',sans-serif;font-size:clamp(28px,4vw,44px);font-weight:800;letter-spacing:-2px;line-height:1.1;margin-bottom:14px;color:transparent;background:linear-gradient(135deg,rgba(30,27,75,0.92) 0%,rgba(37,99,235,0.85) 60%,rgba(124,58,237,0.9) 100%);-webkit-background-clip:text;background-clip:text;}
 .contact-desc{font-size:14px;color:rgba(30,27,75,0.6);line-height:1.7;font-weight:300;margin-bottom:30px;}
 .contact-links{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
-.contact-link{display:flex;align-items:center;gap:7px;padding:10px 20px;background:rgba(255,255,255,0.4);border:1px solid rgba(255,255,255,0.65);border-radius:100px;color:var(--text-dark);text-decoration:none;font-size:13px;font-weight:400;backdrop-filter:blur(10px);transition:background 0.2s,transform 0.2s;}
+.contact-link{display:flex;align-items:center;gap:7px;padding:10px 20px;background:rgba(255,255,255,0.4);border:1px solid rgba(255,255,255,0.65);border-radius:100px;color:var(--text-dark);text-decoration:none;font-size:13px;backdrop-filter:blur(10px);transition:background 0.2s,transform 0.2s;}
 .contact-link:hover{background:rgba(255,255,255,0.65);transform:translateY(-2px);}
 .contact-link .dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
 .divider{height:1px;background:linear-gradient(90deg,transparent,rgba(30,27,75,0.1),transparent);margin:0 56px;}
@@ -164,17 +177,17 @@ footer{text-align:center;padding:32px;font-size:12px;color:rgba(30,27,75,0.35);p
 .reveal{opacity:0;transform:translateY(18px);transition:opacity 0.65s ease,transform 0.65s ease;}
 .reveal.visible{opacity:1;transform:translateY(0);}
 @keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
-@media(max-width:960px){
-  #home .hero{grid-template-columns:1fr;padding:110px 24px 60px;}
-  .hero-right{order:-1;}
-  .hero-name{white-space:normal;font-size:clamp(24px,7vw,40px);}
-  .photo-wrap,.photo-circle{width:200px;height:200px;}
-  nav{padding:14px 24px;}
+
+@media(max-width:768px){
+  nav{padding:14px 20px;}
   .nav-links button:not(.nav-cta){display:none;}
-  .page-inner,.nav-cards,.worked-with,.home-section{padding-left:24px;padding-right:24px;}
-  .nav-cards{grid-template-columns:1fr;}
+  #home .hero{padding:110px 24px 60px;}
+  .hero-name{font-size:clamp(26px,8vw,44px);}
+  .hero-stats{gap:24px;flex-wrap:wrap;}
+  .worked-with,.home-section,.page-inner{padding-left:24px;padding-right:24px;}
+  .nav-cards{grid-template-columns:1fr;padding:24px;}
   .featured-project{grid-template-columns:1fr;}
-  .fp-visual{min-height:120px;font-size:48px;}
+  .fp-visual{min-height:100px;font-size:48px;}
   .exp-card{grid-template-columns:1fr;}
   .exp-period{text-align:left;}
   .win-banner{flex-direction:column;gap:12px;}
@@ -185,7 +198,7 @@ footer{text-align:center;padding:32px;font-size:12px;color:rgba(30,27,75,0.35);p
 <body>
 <div class="bg-mesh"></div>
 <nav>
-  <a class="nav-logo" onclick="showPage('home')" style="cursor:pointer">RGD<span>.</span></a>
+  <span class="nav-logo" onclick="showPage('home')">RGD<span>.</span></span>
   <ul class="nav-links">
     <li><button onclick="showPage('home')" id="nav-home" class="active-nav">Home</button></li>
     <li><button onclick="showPage('projects')" id="nav-projects">Projects</button></li>
@@ -198,31 +211,29 @@ footer{text-align:center;padding:32px;font-size:12px;color:rgba(30,27,75,0.35);p
 <!-- HOME -->
 <div class="page active" id="home">
   <div class="hero">
-    <div class="hero-left">
-      <div class="hero-badge">Open to full-time roles · Bay Area</div>
-      <h1 class="hero-name">Roopa Gangadhar Devihosur.</h1>
-      <p class="hero-desc">Data engineer specializing in AI-driven systems — 6+ years building scalable data platforms, intelligent pipelines, and full-stack applications. Currently pursuing M.S. in Engineering at SJSU.</p>
-      <div class="hero-actions">
-        <button class="btn-primary" onclick="showPage('projects')">View Projects</button>
-        <button class="btn-ghost" onclick="showPage('contact')">Get in Touch</button>
-      </div>
-      <div class="hero-stats">
-        <div><div class="stat-val">6<span>+</span></div><div class="stat-label">Years Exp.</div></div>
-        <div><div class="stat-val">#<span>1</span></div><div class="stat-label">Hackathon Win</div></div>
-        <div><div class="stat-val">4</div><div class="stat-label">AI Projects</div></div>
-        <div><div class="stat-val">2</div><div class="stat-label">Awards</div></div>
+    <!-- PHOTO FIRST, ABOVE NAME -->
+    <div class="photo-wrap">
+      <div class="photo-ring"></div>
+      <div class="photo-ring2"></div>
+      <div class="photo-circle">
+        <img src="photo.jpg" alt="Roopa Gangadhar Devihosur" onerror="this.style.display='none'">
       </div>
     </div>
-    <div class="hero-right">
-      <div class="photo-wrap">
-        <div class="photo-ring"></div>
-        <div class="photo-ring2"></div>
-        <div class="photo-circle">
-          <img src="photo.jpg" alt="Roopa Gangadhar Devihosur" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#c7d2fe,#a5b4fc)'">
-        </div>
-      </div>
+    <div class="hero-badge">Open to full-time roles · Bay Area</div>
+    <h1 class="hero-name">Roopa Gangadhar Devihosur.</h1>
+    <p class="hero-desc">Data engineer specializing in AI-driven systems — 6+ years building scalable data platforms, intelligent pipelines, and full-stack applications. Currently pursuing M.S. in Engineering at SJSU.</p>
+    <div class="hero-actions">
+      <button class="btn-primary" onclick="showPage('projects')">View Projects</button>
+      <button class="btn-ghost" onclick="showPage('contact')">Get in Touch</button>
+    </div>
+    <div class="hero-stats">
+      <div><div class="stat-val">6<span>+</span></div><div class="stat-label">Years Exp.</div></div>
+      <div><div class="stat-val">#<span>1</span></div><div class="stat-label">Hackathon Win</div></div>
+      <div><div class="stat-val">4</div><div class="stat-label">AI Projects</div></div>
+      <div><div class="stat-val">2</div><div class="stat-label">Awards</div></div>
     </div>
   </div>
+
   <div class="worked-with">
     <div class="worked-label">Worked with</div>
     <div class="worked-logos">
@@ -233,6 +244,7 @@ footer{text-align:center;padding:32px;font-size:12px;color:rgba(30,27,75,0.35);p
       <div class="worked-logo">SJSU</div>
     </div>
   </div>
+
   <div class="nav-cards">
     <div class="glass-card nav-card reveal" onclick="showPage('projects')">
       <div class="nav-card-icon">🚀</div>
@@ -253,7 +265,9 @@ footer{text-align:center;padding:32px;font-size:12px;color:rgba(30,27,75,0.35);p
       <div class="nav-card-arrow">See achievements →</div>
     </div>
   </div>
+
   <div class="divider"></div>
+
   <div class="home-section">
     <div class="sec-eye reveal">Career</div>
     <h2 class="sec-title reveal">Where I've <span class="dim">worked</span></h2>
@@ -271,12 +285,14 @@ footer{text-align:center;padding:32px;font-size:12px;color:rgba(30,27,75,0.35);p
         <div class="exp-period">Jan – May 2018<br>Bengaluru, India</div>
       </div>
       <div class="glass-card exp-card reveal">
-        <div><div class="exp-company">AI & ML Club · SJSU</div><div class="exp-role">Social Media Marketing Officer</div><div class="exp-desc">Managing social media strategy and content creation for SJSU's AI & ML Club. Creating engaging campaigns and visual content using Canva and photography.</div></div>
+        <div><div class="exp-company">AI & ML Club · SJSU</div><div class="exp-role">Social Media Marketing Officer</div><div class="exp-desc">Managing social media strategy and content for SJSU's AI & ML Club. Creating engaging campaigns and visual content using Canva and photography.</div></div>
         <div class="exp-period">Sep 2025 – Present<br>San Jose, CA</div>
       </div>
     </div>
   </div>
+
   <div class="divider"></div>
+
   <div class="home-section">
     <div class="sec-eye reveal">Capabilities</div>
     <h2 class="sec-title reveal">Technical <span class="dim">skills</span></h2>
@@ -310,7 +326,7 @@ footer{text-align:center;padding:32px;font-size:12px;color:rgba(30,27,75,0.35);p
       <div class="fp-content">
         <div class="fp-tag">🏆 Hackathon Winner</div>
         <div class="fp-title">FoundersFYI</div>
-        <div class="fp-desc">AI-powered social media marketing agent helping early-stage founders discover their authentic voice and build momentum on LinkedIn. Multi-agent system (research → strategy → content) shipped in 5 hours including a complete pivot.</div>
+        <div class="fp-desc">AI-powered social media marketing agent helping early-stage founders discover their voice and build momentum on LinkedIn. Multi-agent system shipped in 5 hours including a full pivot.</div>
         <div class="fp-tech"><span class="tech-pill">Python</span><span class="tech-pill">CrewAI</span><span class="tech-pill">Claude API</span><span class="tech-pill">FastAPI</span><span class="tech-pill">Next.js</span><span class="tech-pill">TypeScript</span></div>
         <a href="https://github.com/roopadevihosur-07/Founders.FYI" class="fp-link" target="_blank">View on GitHub →</a>
       </div>
@@ -319,34 +335,10 @@ footer{text-align:center;padding:32px;font-size:12px;color:rgba(30,27,75,0.35);p
     <div class="sec-eye reveal">More</div>
     <h2 class="sec-title reveal">Other <span class="dim">projects</span></h2>
     <div class="projects-mini-grid">
-      <div class="glass-card mini-card reveal">
-        <div class="mini-tag">AI · IoT</div>
-        <div class="mini-title">Smart Home Elderly Care</div>
-        <div class="mini-desc">AI-driven monitoring platform using AWS Lambda, DynamoDB, ECS Fargate, and YAMNet neural network to classify 10+ emergency audio events. Real-time caregiver alerts and role-based dashboards.</div>
-        <div class="fp-tech" style="margin-bottom:12px;"><span class="tech-pill">React</span><span class="tech-pill">FastAPI</span><span class="tech-pill">AWS</span><span class="tech-pill">TensorFlow</span><span class="tech-pill">YAMNet</span></div>
-        <a href="https://github.com/roopadevihosur-07" class="fp-link" target="_blank">GitHub →</a>
-      </div>
-      <div class="glass-card mini-card reveal">
-        <div class="mini-tag">Multi-Agent</div>
-        <div class="mini-title">Visual Style Intelligence</div>
-        <div class="mini-desc">AI fashion assistant analyzing silhouettes, textures, and color palettes. CrewAI agents scout luxury retailers and generate Brand DNA reports with an interactive AI stylist chat.</div>
-        <div class="fp-tech" style="margin-bottom:12px;"><span class="tech-pill">Next.js</span><span class="tech-pill">TypeScript</span><span class="tech-pill">CrewAI</span><span class="tech-pill">Claude API</span><span class="tech-pill">Serper</span></div>
-        <a href="https://github.com/roopadevihosur-07" class="fp-link" target="_blank">GitHub →</a>
-      </div>
-      <div class="glass-card mini-card reveal">
-        <div class="mini-tag">RAG · Research</div>
-        <div class="mini-title">Multi-Agent Research Assistant</div>
-        <div class="mini-desc">Three-agent system (Coordinator, Summarizer, Reviewer) using RAG with ChromaDB and Sentence Transformers to produce grounded, citation-backed research answers.</div>
-        <div class="fp-tech" style="margin-bottom:12px;"><span class="tech-pill">AutoGen</span><span class="tech-pill">Claude 3.5</span><span class="tech-pill">ChromaDB</span><span class="tech-pill">RAG</span></div>
-        <a href="https://github.com/roopadevihosur-07" class="fp-link" target="_blank">GitHub →</a>
-      </div>
-      <div class="glass-card mini-card reveal">
-        <div class="mini-tag">Full Stack</div>
-        <div class="mini-title">Cloud Expense Tracker</div>
-        <div class="mini-desc">Full-stack MERN app for real-time expense tracking with category-wise Pie Chart dashboards, MongoDB Atlas storage, and React Router navigation.</div>
-        <div class="fp-tech" style="margin-bottom:12px;"><span class="tech-pill">MongoDB</span><span class="tech-pill">React.js</span><span class="tech-pill">Node.js</span><span class="tech-pill">Express</span><span class="tech-pill">Recharts</span></div>
-        <a href="https://github.com/roopadevihosur-07" class="fp-link" target="_blank">GitHub →</a>
-      </div>
+      <div class="glass-card mini-card reveal"><div class="mini-tag">AI · IoT</div><div class="mini-title">Smart Home Elderly Care</div><div class="mini-desc">AWS-powered IoT monitoring using YAMNet neural network to classify 10+ emergency audio events with privacy-safe processing. Real-time caregiver alerts and dashboards.</div><div class="fp-tech" style="margin-bottom:12px;"><span class="tech-pill">React</span><span class="tech-pill">FastAPI</span><span class="tech-pill">AWS</span><span class="tech-pill">TensorFlow</span><span class="tech-pill">YAMNet</span></div><a href="https://github.com/roopadevihosur-07" class="fp-link" target="_blank">GitHub →</a></div>
+      <div class="glass-card mini-card reveal"><div class="mini-tag">Multi-Agent</div><div class="mini-title">Visual Style Intelligence</div><div class="mini-desc">AI fashion assistant analyzing silhouettes, textures, and color palettes. CrewAI agents scout luxury retailers and generate Brand DNA reports with an interactive AI stylist chat.</div><div class="fp-tech" style="margin-bottom:12px;"><span class="tech-pill">Next.js</span><span class="tech-pill">TypeScript</span><span class="tech-pill">CrewAI</span><span class="tech-pill">Claude API</span><span class="tech-pill">Serper</span></div><a href="https://github.com/roopadevihosur-07" class="fp-link" target="_blank">GitHub →</a></div>
+      <div class="glass-card mini-card reveal"><div class="mini-tag">RAG · Research</div><div class="mini-title">Multi-Agent Research Assistant</div><div class="mini-desc">Three-agent system (Coordinator, Summarizer, Reviewer) using RAG with ChromaDB and Sentence Transformers to produce grounded, citation-backed research answers.</div><div class="fp-tech" style="margin-bottom:12px;"><span class="tech-pill">AutoGen</span><span class="tech-pill">Claude 3.5</span><span class="tech-pill">ChromaDB</span><span class="tech-pill">RAG</span></div><a href="https://github.com/roopadevihosur-07" class="fp-link" target="_blank">GitHub →</a></div>
+      <div class="glass-card mini-card reveal"><div class="mini-tag">Full Stack</div><div class="mini-title">Cloud Expense Tracker</div><div class="mini-desc">Full-stack MERN app for real-time expense tracking with category-wise Pie Chart dashboards, MongoDB Atlas storage, and React Router navigation.</div><div class="fp-tech" style="margin-bottom:12px;"><span class="tech-pill">MongoDB</span><span class="tech-pill">React.js</span><span class="tech-pill">Node.js</span><span class="tech-pill">Express</span><span class="tech-pill">Recharts</span></div><a href="https://github.com/roopadevihosur-07" class="fp-link" target="_blank">GitHub →</a></div>
     </div>
   </div>
   <footer><p>Designed & built by Roopa Gangadhar Devihosur · 2026</p></footer>
@@ -358,29 +350,17 @@ footer{text-align:center;padding:32px;font-size:12px;color:rgba(30,27,75,0.35);p
     <button class="page-back" onclick="showPage('home')">← Back to Home</button>
     <div class="page-header-eyebrow">Academic Background</div>
     <h1 class="page-header-title">Education & Certifications</h1>
-    <p class="page-header-sub">Formal education in Electronics & Communication and Applied Data Science, paired with industry certifications in AI and Machine Learning.</p>
+    <p class="page-header-sub">Formal education in Electronics & Communication and Applied Data Science, paired with certifications in AI and Machine Learning.</p>
     <div class="sec-eye reveal">Degrees</div>
     <h2 class="sec-title reveal">Academic <span class="dim">education</span></h2>
     <div class="edu-grid">
-      <div class="glass-card edu-card reveal">
-        <div class="edu-icon">🎓</div>
-        <div class="edu-degree">M.S. Engineering — Applied Data Science</div>
-        <div class="edu-school">San José State University</div>
-        <div class="edu-period">Aug 2025 – Present · San Jose, CA</div>
-        <div class="edu-desc">Deepening expertise at the intersection of data engineering and AI. Coursework covers machine learning, cloud computing, and applied AI systems.</div>
-      </div>
-      <div class="glass-card edu-card reveal">
-        <div class="edu-icon">🎓</div>
-        <div class="edu-degree">B.E. Electronics & Communication Engineering</div>
-        <div class="edu-school">Bangalore Institute of Technology</div>
-        <div class="edu-period">2014 – 2018 · Bengaluru, India</div>
-        <div class="edu-desc">Foundation in signal processing, digital systems, and embedded computing. Final-year research on Compressive Sensing for RADAR led to a peer-reviewed DRDO publication.</div>
-      </div>
+      <div class="glass-card edu-card reveal"><div class="edu-icon">🎓</div><div class="edu-degree">M.S. Engineering — Applied Data Science</div><div class="edu-school">San José State University</div><div class="edu-period">Aug 2025 – Present · San Jose, CA</div><div class="edu-desc">Deepening expertise at the intersection of data engineering and AI. Covers machine learning, cloud computing, and applied AI systems.</div></div>
+      <div class="glass-card edu-card reveal"><div class="edu-icon">🎓</div><div class="edu-degree">B.E. Electronics & Communication Engineering</div><div class="edu-school">Bangalore Institute of Technology</div><div class="edu-period">2014 – 2018 · Bengaluru, India</div><div class="edu-desc">Foundation in signal processing, digital systems, and embedded computing. Research led to a peer-reviewed DRDO publication.</div></div>
     </div>
     <div class="sec-eye reveal" style="margin-top:20px;">Certifications</div>
     <h2 class="sec-title reveal">Professional <span class="dim">certifications</span></h2>
     <div class="cert-grid">
-      <div class="glass-card cert-card reveal"><div class="cert-icon">🤖</div><div><div class="cert-title">Agentic AI</div><div class="cert-org">Certification Program</div><div class="cert-desc">Advanced AI agent design, multi-agent orchestration, and production deployment strategies using modern LLM frameworks.</div></div></div>
+      <div class="glass-card cert-card reveal"><div class="cert-icon">🤖</div><div><div class="cert-title">Agentic AI</div><div class="cert-org">Certification Program</div><div class="cert-desc">Advanced AI agent design, multi-agent orchestration, and production deployment using modern LLM frameworks.</div></div></div>
       <div class="glass-card cert-card reveal"><div class="cert-icon">📐</div><div><div class="cert-title">Mathematics for ML & Data Science</div><div class="cert-org">Coursera / DeepLearning.AI</div><div class="cert-desc">Linear algebra, calculus, probability, and statistics — the mathematical foundations of modern machine learning.</div></div></div>
       <div class="glass-card cert-card reveal"><div class="cert-icon">📄</div><div><div class="cert-title">Peer-Reviewed Research Publication</div><div class="cert-org">LRDE / DRDO · 2018</div><div class="cert-desc">Target Doppler Analysis Using Compressive Sensing Technique — A Simulation Study.</div></div></div>
     </div>
@@ -394,29 +374,17 @@ footer{text-align:center;padding:32px;font-size:12px;color:rgba(30,27,75,0.35);p
     <button class="page-back" onclick="showPage('home')">← Back to Home</button>
     <div class="page-header-eyebrow">Recognition</div>
     <h1 class="page-header-title">Awards & Honors</h1>
-    <p class="page-header-sub">A track record of delivering results that matter — recognized by industry leaders, hackathon judges, and organizational leadership.</p>
+    <p class="page-header-sub">A track record of delivering results — recognized by industry leaders, hackathon judges, and organizational leadership.</p>
     <div class="awards-hero">
-      <div class="glass-card award-featured reveal">
-        <div class="award-icon-big">🏆</div>
-        <div class="award-title-big">1st Place — Marketing Agents Hackathon</div>
-        <div class="award-org-big">Apify, Minds AI, The AI Collective & Entrepreneurs First</div>
-        <div class="award-year">April 2026</div>
-        <div class="award-desc-big">Won 1st place out of 50+ teams by building FoundersFYI — an AI Social Media Marketing Agent — entirely in 5 hours, including a complete product pivot with 2.5 hours remaining.</div>
-      </div>
-      <div class="glass-card award-featured reveal">
-        <div class="award-icon-big">🎖️</div>
-        <div class="award-title-big">Rock Star ASE Employee</div>
-        <div class="award-org-big">Accenture Technology</div>
-        <div class="award-year">2019</div>
-        <div class="award-desc-big">Awarded by Accenture Leadership for demonstrating exemplary performance resulting in significant impact to the client and program. Recognized as Technical SME.</div>
-      </div>
+      <div class="glass-card award-featured reveal"><div class="award-icon-big">🏆</div><div class="award-title-big">1st Place — Marketing Agents Hackathon</div><div class="award-org-big">Apify, Minds AI, The AI Collective & Entrepreneurs First</div><div class="award-year">April 2026</div><div class="award-desc-big">Won 1st place out of 50+ teams by building FoundersFYI — an AI Social Media Marketing Agent — in 5 hours, including a complete product pivot with 2.5 hours remaining.</div></div>
+      <div class="glass-card award-featured reveal"><div class="award-icon-big">🎖️</div><div class="award-title-big">Rock Star ASE Employee</div><div class="award-org-big">Accenture Technology</div><div class="award-year">2019</div><div class="award-desc-big">Awarded by Accenture Leadership for demonstrating exemplary performance resulting in significant impact to the client and program. Recognized as Technical SME.</div></div>
     </div>
     <div class="sec-eye reveal">Timeline</div>
     <h2 class="sec-title reveal">All <span class="dim">achievements</span></h2>
     <div class="award-timeline">
       <div class="glass-card timeline-item reveal"><div class="timeline-dot"></div><div class="timeline-year">2026</div><div><div class="timeline-title">1st Place — Marketing Agents Hackathon</div><div class="timeline-org">Apify, Minds AI, The AI Collective & Entrepreneurs First</div><div class="timeline-desc">Built FoundersFYI in 5 hours. Won out of 50+ teams.</div></div></div>
-      <div class="glass-card timeline-item reveal"><div class="timeline-dot" style="background:var(--accent2);box-shadow:0 0 10px rgba(124,58,237,0.4);"></div><div class="timeline-year">2023</div><div><div class="timeline-title">Certificate of Appreciation — Execution Excellence</div><div class="timeline-org">o9 Solutions · Dave Koss, Leadership and Values Coach</div><div class="timeline-desc">Recognized for clear communication, decisive action, continuous improvement, and disciplined cadence.</div></div></div>
-      <div class="glass-card timeline-item reveal"><div class="timeline-dot" style="background:var(--gold);box-shadow:0 0 10px rgba(180,83,9,0.4);"></div><div class="timeline-year">2019</div><div><div class="timeline-title">Rock Star ASE Employee</div><div class="timeline-org">Accenture Technology · Timothy D. Tucker, Accenture Leadership</div><div class="timeline-desc">Awarded for exemplary performance with significant impact to client and program. Recognized as Technical SME.</div></div></div>
+      <div class="glass-card timeline-item reveal"><div class="timeline-dot" style="background:var(--accent2);box-shadow:0 0 10px rgba(124,58,237,0.4);"></div><div class="timeline-year">2023</div><div><div class="timeline-title">Certificate of Appreciation — Execution Excellence</div><div class="timeline-org">o9 Solutions · Dave Koss, Leadership and Values Coach</div><div class="timeline-desc">Recognized for clear communication, decisive action, and disciplined cadence.</div></div></div>
+      <div class="glass-card timeline-item reveal"><div class="timeline-dot" style="background:var(--gold);box-shadow:0 0 10px rgba(180,83,9,0.4);"></div><div class="timeline-year">2019</div><div><div class="timeline-title">Rock Star ASE Employee</div><div class="timeline-org">Accenture Technology · Timothy D. Tucker</div><div class="timeline-desc">Awarded for exemplary performance with significant impact to client. Recognized as Technical SME.</div></div></div>
       <div class="glass-card timeline-item reveal"><div class="timeline-dot" style="background:#059669;box-shadow:0 0 10px rgba(5,150,105,0.4);"></div><div class="timeline-year">2018</div><div><div class="timeline-title">Peer-Reviewed Publication</div><div class="timeline-org">LRDE / DRDO</div><div class="timeline-desc">Target Doppler Analysis Using Compressive Sensing Technique — A Simulation Study.</div></div></div>
     </div>
   </div>

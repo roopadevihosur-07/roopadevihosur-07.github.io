@@ -173,13 +173,15 @@
         .hero-image {
             width: 100%;
             aspect-ratio: 1;
-            background: linear-gradient(135deg, #0071e3 0%, #7c3aed 100%);
             border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 200px;
+            overflow: hidden;
             box-shadow: 0 20px 60px rgba(0, 113, 227, 0.2);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .stats {
@@ -659,7 +661,9 @@
                 </div>
             </div>
         </div>
-        <div class="hero-image">💡</div>
+        <div class="hero-image">
+            <img src="photo.png" alt="Roopa Gangadhar Devihosur" />
+        </div>
     </div>
 
     <!-- Experience Section -->

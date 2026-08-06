@@ -3,45 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roopa Gangadhar Devihosur — Applied AI & Data Engineering</title>
+    <title>Roopa Devihosur — AI Engineer & Data Specialist</title>
     <style>
         :root {
-            /* Colors */
-            --color-apple-ink: #1d1d1f;
-            --color-fog-canvas: #f5f5f7;
-            --color-pure-white: #ffffff;
-            --color-graphite: #707070;
-            --color-slate: #86868b;
-            --color-ash: #e8e8ed;
-            --color-electric-blue: #0071e3;
-            --color-link-blue: #0066cc;
-
-            /* Typography */
-            --font-sf-pro-display: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'SF Pro Display', 'Helvetica Neue', sans-serif;
-            --font-sf-pro-text: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'SF Pro Text', 'Helvetica Neue', sans-serif;
-
-            /* Spacing */
-            --spacing-4: 4px;
-            --spacing-8: 8px;
-            --spacing-16: 16px;
-            --spacing-20: 20px;
-            --spacing-24: 24px;
-            --spacing-28: 28px;
-            --spacing-32: 32px;
-            --spacing-40: 40px;
-            --spacing-48: 48px;
-            --spacing-80: 80px;
-            --spacing-100: 100px;
-            --spacing-120: 120px;
-
-            /* Radius */
-            --radius-cards: 28px;
-            --radius-button: 980px;
-            --radius-chip: 999px;
-
-            /* Layout */
-            --page-max-width: 1440px;
-            --section-gap: 120px;
+            --primary-color: #0071e3;
+            --text-dark: #1d1d1f;
+            --text-gray: #707070;
+            --text-light: #86868b;
+            --bg-light: #f5f5f7;
+            --bg-white: #ffffff;
+            --border-color: #e8e8ed;
         }
 
         * {
@@ -55,432 +26,590 @@
         }
 
         body {
-            font-family: var(--font-sf-pro-text);
-            background-color: var(--color-fog-canvas);
-            color: var(--color-apple-ink);
-            line-height: 1.47;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
         }
 
-        /* ===== GLOBAL NAV ===== */
+        /* Navigation */
         nav {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             z-index: 999;
-            height: 48px;
-            background-color: rgba(29, 29, 31, 0.8);
+            background-color: rgba(29, 29, 31, 0.95);
             backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 16px 40px;
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            padding: 0 40px;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .nav-logo {
-            font-family: var(--font-sf-pro-display);
-            font-size: 17px;
-            font-weight: 600;
-            color: var(--color-pure-white);
+        .logo {
+            font-size: 18px;
+            font-weight: 700;
+            color: #fff;
             text-decoration: none;
-            letter-spacing: -0.019em;
+            letter-spacing: -0.5px;
         }
 
         .nav-links {
             display: flex;
-            gap: 20px;
+            gap: 32px;
             list-style: none;
             align-items: center;
         }
 
         .nav-links a {
-            font-size: 12px;
             color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
-            font-weight: 400;
-            letter-spacing: 0.01em;
-            text-transform: uppercase;
-            transition: color 0.2s;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s;
         }
 
         .nav-links a:hover {
-            color: var(--color-pure-white);
+            color: #fff;
         }
 
-        /* ===== HERO SECTION ===== */
+        .btn-contact {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: opacity 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-contact:hover {
+            opacity: 0.9;
+        }
+
+        /* Hero Section */
         .hero {
-            min-height: 100vh;
-            padding-top: 48px;
-            display: flex;
-            flex-direction: column;
+            margin-top: 60px;
+            padding: 80px 40px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
             align-items: center;
-            justify-content: center;
-            position: relative;
-            max-width: var(--page-max-width);
-            margin: 0 auto;
-            padding-left: 40px;
-            padding-right: 40px;
         }
 
-        .hero-visual {
-            width: 100%;
-            max-width: 900px;
-            aspect-ratio: 16 / 9;
-            background-color: var(--color-pure-white);
-            border-radius: var(--radius-cards);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: var(--spacing-100);
-            font-size: 56px;
+        .hero-content h1 {
+            font-size: 72px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+            letter-spacing: -1px;
+        }
+
+        .hero-content .title {
+            font-size: 28px;
+            color: var(--primary-color);
             font-weight: 600;
-            color: var(--color-graphite);
-            letter-spacing: 0.007em;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
         }
 
-        .hero-content {
+        .hero-content p {
+            font-size: 18px;
+            color: var(--text-gray);
+            margin-bottom: 32px;
+            line-height: 1.8;
+        }
+
+        .hero-ctas {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .hero-headline {
-            font-family: var(--font-sf-pro-display);
-            font-size: clamp(48px, 8vw, 96px);
-            font-weight: 600;
-            line-height: 1.07;
-            letter-spacing: 0.01em;
-            color: var(--color-apple-ink);
-            margin-bottom: var(--spacing-28);
-        }
-
-        .hero-subheading {
-            font-size: 20px;
-            font-weight: 400;
-            color: var(--color-graphite);
-            line-height: 1.47;
-            margin-bottom: var(--spacing-48);
-            max-width: 600px;
-        }
-
-        .hero-cta {
-            display: inline-flex;
-            gap: 12px;
-            margin-bottom: var(--spacing-80);
+            gap: 16px;
             flex-wrap: wrap;
-            justify-content: center;
+        }
+
+        .btn {
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .btn-primary {
-            padding: 12px 24px;
-            background-color: var(--color-electric-blue);
-            color: var(--color-pure-white);
-            font-family: var(--font-sf-pro-text);
-            font-size: 17px;
-            font-weight: 400;
-            border: none;
-            border-radius: var(--radius-button);
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: opacity 0.2s;
-            letter-spacing: -0.019em;
+            background-color: var(--primary-color);
+            color: white;
         }
 
         .btn-primary:hover {
-            opacity: 0.85;
+            opacity: 0.9;
+            transform: translateY(-2px);
         }
 
-        .btn-ghost {
-            padding: 12px 24px;
+        .btn-secondary {
             background-color: transparent;
-            color: var(--color-apple-ink);
-            border: 1px solid var(--color-apple-ink);
-            font-family: var(--font-sf-pro-text);
-            font-size: 17px;
-            font-weight: 400;
-            border-radius: var(--radius-button);
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-flex;
+            color: var(--text-dark);
+            border: 2px solid var(--text-dark);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--text-dark);
+            color: white;
+        }
+
+        .hero-image {
+            width: 100%;
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, #0071e3 0%, #7c3aed 100%);
+            border-radius: 20px;
+            display: flex;
             align-items: center;
-            gap: 8px;
-            transition: all 0.2s;
-            letter-spacing: -0.019em;
+            justify-content: center;
+            font-size: 200px;
+            box-shadow: 0 20px 60px rgba(0, 113, 227, 0.2);
         }
 
-        .btn-ghost:hover {
-            background-color: var(--color-apple-ink);
-            color: var(--color-pure-white);
+        .stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border-color);
         }
 
-        /* ===== SECTION HEADING ===== */
-        .section-heading {
-            font-family: var(--font-sf-pro-display);
-            font-size: 56px;
-            font-weight: 600;
-            line-height: 1.07;
-            letter-spacing: 0.007em;
-            color: var(--color-apple-ink);
+        .stat {
             text-align: left;
-            margin-bottom: var(--spacing-80);
         }
 
-        /* ===== SECTIONS ===== */
-        section {
-            max-width: var(--page-max-width);
+        .stat-number {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 4px;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
             margin: 0 auto;
-            padding: var(--spacing-120) 40px;
+            padding: 0 40px;
         }
 
-        /* ===== EXPERIENCE SECTION ===== */
-        .experience-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: var(--spacing-80);
+        /* Section Styles */
+        section {
+            padding: 100px 0;
+            border-bottom: 1px solid var(--border-color);
         }
 
-        .experience-card {
-            background-color: var(--color-pure-white);
-            padding: var(--spacing-28);
-            border-radius: var(--radius-cards);
-            border: 1px solid rgba(29, 29, 31, 0.06);
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 60px;
+            color: var(--text-dark);
+            letter-spacing: -0.5px;
+        }
+
+        /* Experience Section */
+        .experience-item {
+            background: var(--bg-white);
+            padding: 32px;
+            border-radius: 12px;
+            margin-bottom: 28px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s;
+        }
+
+        .experience-item:hover {
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transform: translateY(-4px);
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
         }
 
         .exp-company {
-            font-family: var(--font-sf-pro-display);
-            font-size: 28px;
-            font-weight: 600;
-            letter-spacing: -0.009em;
-            color: var(--color-apple-ink);
-            margin-bottom: var(--spacing-8);
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 8px;
         }
 
         .exp-role {
-            font-size: 17px;
+            font-size: 18px;
             font-weight: 600;
-            color: var(--color-apple-ink);
-            margin-bottom: var(--spacing-8);
+            color: var(--primary-color);
+            margin-bottom: 8px;
         }
 
-        .exp-meta {
-            font-size: 12px;
-            color: var(--color-slate);
-            margin-bottom: var(--spacing-20);
+        .exp-date {
+            font-size: 14px;
+            color: var(--text-light);
             text-transform: uppercase;
-            letter-spacing: 0.01em;
+            letter-spacing: 0.5px;
         }
 
         .exp-description {
-            font-size: 17px;
-            line-height: 1.47;
-            color: var(--color-graphite);
+            font-size: 16px;
+            color: var(--text-gray);
+            line-height: 1.8;
+        }
+
+        .exp-description ul {
+            list-style: none;
+            padding-left: 0;
         }
 
         .exp-description li {
-            margin-bottom: var(--spacing-12);
-            margin-left: var(--spacing-20);
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
         }
 
-        /* ===== HACKATHON SECTION ===== */
+        .exp-description li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        /* Hackathon Section */
         .hackathon-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: var(--spacing-40);
+            gap: 32px;
         }
 
         .hackathon-card {
-            background-color: var(--color-pure-white);
-            padding: var(--spacing-28);
-            border-radius: var(--radius-cards);
-            border: 1px solid rgba(29, 29, 31, 0.06);
-            display: flex;
-            flex-direction: column;
+            background: var(--bg-white);
+            padding: 32px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s;
         }
 
-        .hackathon-badge {
-            display: inline-flex;
-            align-items: center;
-            padding: 4px 10px;
+        .hackathon-card:hover {
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transform: translateY(-4px);
+        }
+
+        .badge {
+            display: inline-block;
             background-color: #0071e320;
-            border-radius: var(--radius-chip);
+            color: var(--primary-color);
+            padding: 6px 12px;
+            border-radius: 20px;
             font-size: 12px;
-            font-weight: 600;
-            color: var(--color-electric-blue);
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.01em;
-            margin-bottom: var(--spacing-16);
-            width: fit-content;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
         }
 
         .hackathon-title {
-            font-family: var(--font-sf-pro-display);
-            font-size: 24px;
-            font-weight: 600;
-            letter-spacing: -0.009em;
-            color: var(--color-apple-ink);
-            margin-bottom: var(--spacing-12);
-            line-height: 1.14;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+            line-height: 1.3;
         }
 
         .hackathon-desc {
-            font-size: 17px;
-            line-height: 1.47;
-            color: var(--color-graphite);
-            flex-grow: 1;
-            margin-bottom: var(--spacing-20);
+            font-size: 16px;
+            color: var(--text-gray);
+            line-height: 1.8;
+            margin-bottom: 20px;
         }
 
-        .hackathon-details {
+        .hackathon-meta {
             font-size: 13px;
-            color: var(--color-slate);
+            color: var(--text-light);
             display: flex;
             flex-direction: column;
-            gap: var(--spacing-8);
+            gap: 8px;
         }
 
-        /* ===== SKILLS SECTION ===== */
+        .hackathon-meta strong {
+            color: var(--text-dark);
+        }
+
+        /* Projects Section */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+
+        .project-card {
+            background: var(--bg-white);
+            padding: 32px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s;
+        }
+
+        .project-card:hover {
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transform: translateY(-4px);
+        }
+
+        .project-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+        }
+
+        .project-desc {
+            font-size: 16px;
+            color: var(--text-gray);
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tech-tag {
+            background-color: var(--border-color);
+            color: var(--text-dark);
+            padding: 4px 10px;
+            border-radius: 16px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        /* Skills Section */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: var(--spacing-28);
+            gap: 32px;
         }
 
         .skill-category {
-            background-color: var(--color-pure-white);
-            padding: var(--spacing-28);
-            border-radius: var(--radius-cards);
-            border: 1px solid rgba(29, 29, 31, 0.06);
+            background: var(--bg-white);
+            padding: 28px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
         }
 
         .skill-category h3 {
-            font-family: var(--font-sf-pro-display);
-            font-size: 21px;
-            font-weight: 600;
-            letter-spacing: -0.012em;
-            color: var(--color-apple-ink);
-            margin-bottom: var(--spacing-16);
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 12px;
         }
 
         .skill-items {
             display: flex;
             flex-wrap: wrap;
-            gap: var(--spacing-8);
+            gap: 10px;
         }
 
-        .skill-tag {
-            display: inline-block;
-            padding: 6px 12px;
-            background-color: var(--color-ash);
-            border-radius: var(--radius-chip);
+        .skill-item {
+            background-color: var(--border-color);
+            color: var(--text-dark);
+            padding: 8px 14px;
+            border-radius: 20px;
             font-size: 13px;
-            color: var(--color-apple-ink);
             font-weight: 500;
-            letter-spacing: -0.01em;
         }
 
-        /* ===== EDUCATION SECTION ===== */
-        .education-card {
-            background-color: var(--color-pure-white);
-            padding: var(--spacing-28);
-            border-radius: var(--radius-cards);
-            border: 1px solid rgba(29, 29, 31, 0.06);
-            margin-bottom: var(--spacing-28);
+        /* Education Section */
+        .education-item {
+            background: var(--bg-white);
+            padding: 32px;
+            border-radius: 12px;
+            margin-bottom: 28px;
+            border: 1px solid var(--border-color);
         }
 
-        .edu-school {
-            font-family: var(--font-sf-pro-display);
-            font-size: 24px;
+        .education-school {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .education-degree {
+            font-size: 18px;
             font-weight: 600;
-            letter-spacing: -0.009em;
-            color: var(--color-apple-ink);
-            margin-bottom: var(--spacing-8);
+            color: var(--primary-color);
+            margin-bottom: 8px;
         }
 
-        .edu-degree {
-            font-size: 17px;
-            font-weight: 600;
-            color: var(--color-apple-ink);
-            margin-bottom: var(--spacing-8);
-        }
-
-        .edu-meta {
-            font-size: 13px;
-            color: var(--color-slate);
+        .education-meta {
+            font-size: 14px;
+            color: var(--text-light);
             text-transform: uppercase;
-            letter-spacing: 0.01em;
+            letter-spacing: 0.5px;
         }
 
-        /* ===== FOOTER ===== */
+        /* Research & Publications */
+        .research-item {
+            background: var(--bg-white);
+            padding: 28px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .research-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .research-meta {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-bottom: 12px;
+        }
+
+        /* Links Section */
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .link-card {
+            background: var(--bg-white);
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+            text-decoration: none;
+            color: var(--text-dark);
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .link-card:hover {
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transform: translateY(-4px);
+            color: var(--primary-color);
+        }
+
+        .link-icon {
+            font-size: 32px;
+        }
+
+        .link-card h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        /* Footer */
         footer {
-            background-color: var(--color-apple-ink);
-            color: var(--color-pure-white);
-            padding: var(--spacing-80) 40px;
+            background-color: var(--text-dark);
+            color: white;
+            padding: 60px 40px;
             text-align: center;
         }
 
         footer p {
-            font-size: 13px;
-            letter-spacing: -0.01em;
-            margin-bottom: var(--spacing-16);
+            font-size: 14px;
+            margin-bottom: 20px;
         }
 
         .footer-links {
             display: flex;
             justify-content: center;
-            gap: var(--spacing-28);
+            gap: 24px;
             flex-wrap: wrap;
-            margin-top: var(--spacing-28);
+            margin-top: 24px;
         }
 
         .footer-links a {
-            color: var(--color-pure-white);
+            color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.01em;
-            transition: opacity 0.2s;
+            font-size: 14px;
+            transition: color 0.3s;
         }
 
         .footer-links a:hover {
-            opacity: 0.7;
+            color: var(--primary-color);
         }
 
-        /* ===== RESPONSIVE ===== */
+        /* Responsive */
         @media (max-width: 768px) {
             nav {
-                padding: 0 20px;
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+                width: 100%;
             }
 
             .hero {
-                padding-left: 20px;
-                padding-right: 20px;
+                grid-template-columns: 1fr;
+                padding: 40px 20px;
+                gap: 40px;
+                margin-top: 120px;
+            }
+
+            .hero-content h1 {
+                font-size: 48px;
+            }
+
+            h2 {
+                font-size: 36px;
             }
 
             section {
-                padding: var(--spacing-80) 20px;
+                padding: 60px 0;
             }
 
-            .hero-headline {
-                font-size: clamp(32px, 7vw, 56px);
+            .container {
+                padding: 0 20px;
             }
 
-            .section-heading {
-                font-size: clamp(32px, 7vw, 56px);
-            }
-
-            .hackathon-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr;
+            .stats {
+                flex-direction: column;
+                gap: 24px;
             }
         }
     </style>
@@ -488,38 +617,65 @@
 <body>
     <!-- Navigation -->
     <nav>
-        <div class="nav-logo">Roopa Devihosur</div>
-        <div class="nav-links">
-            <a href="#experience">Experience</a>
-            <a href="#hackathons">Hackathons</a>
-            <a href="#skills">Skills</a>
-            <a href="#education">Education</a>
-            <a href="#contact" class="btn-primary">Contact</a>
-        </div>
+        <a href="#" class="logo">Roopa Devihosur</a>
+        <ul class="nav-links">
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#hackathons">Hackathons</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#contact" class="btn-contact">Contact</a></li>
+        </ul>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-visual">🚀</div>
-        <div class="hero-content">
-            <h1 class="hero-headline">Applied AI & Data Engineering</h1>
-            <p class="hero-subheading">MSE student at SJSU building agentic AI systems, knowledge graphs, and scalable data pipelines. Three-time hackathon winner.</p>
-            <div class="hero-cta">
-                <a href="#experience" class="btn-primary">Explore Work</a>
-                <a href="mailto:roopa.devihosur76@gmail.com" class="btn-ghost">Get in Touch</a>
+    <div class="hero">
+        <div class="container" style="flex: 1;">
+            <div class="hero-content">
+                <h1>Roopa Gangadhar Devihosur</h1>
+                <div class="title">Applied AI Engineer & Data Specialist</div>
+                <p>Building agentic AI systems, knowledge graphs, and scalable data pipelines. MSE in Applied Data Science from SJSU. 6+ years in data engineering, ETL, and full-stack development. Three-time hackathon winner.</p>
+
+                <div class="hero-ctas">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="https://github.com/roopadevihosur-07" target="_blank" class="btn btn-secondary">GitHub</a>
+                    <a href="https://linkedin.com/in/roopadevihosur" target="_blank" class="btn btn-secondary">LinkedIn</a>
+                </div>
+
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Hackathon Wins</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">6+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Projects</div>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
+        <div class="hero-image">💡</div>
+    </div>
 
     <!-- Experience Section -->
     <section id="experience">
-        <h2 class="section-heading">Experience</h2>
-        <div class="experience-grid">
-            <!-- Adobe -->
-            <div class="experience-card">
-                <div class="exp-company">Adobe</div>
-                <div class="exp-role">Student Ambassador</div>
-                <div class="exp-meta">Jul 2026 – Present · San Jose, CA · Part-time, Hybrid</div>
+        <div class="container">
+            <h2>Professional Experience</h2>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div>
+                        <div class="exp-company">Adobe</div>
+                        <div class="exp-role">Student Ambassador</div>
+                    </div>
+                    <div class="exp-date">Jul 2026 – Present</div>
+                </div>
+                <p class="exp-date" style="margin-bottom: 16px;">San Jose, CA · Part-time, Hybrid</p>
                 <div class="exp-description">
                     <ul>
                         <li>Represent Adobe at San José State University, helping students apply Adobe Express and Firefly to coursework, club promotion, resumes, and portfolios.</li>
@@ -528,11 +684,15 @@
                 </div>
             </div>
 
-            <!-- o9 Solutions -->
-            <div class="experience-card">
-                <div class="exp-company">o9 Solutions</div>
-                <div class="exp-role">Technical Consultant – Supply Chain & Data Engineering</div>
-                <div class="exp-meta">Sep 2022 – Nov 2024 · Bangalore, India</div>
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div>
+                        <div class="exp-company">o9 Solutions</div>
+                        <div class="exp-role">Technical Consultant – Supply Chain & Data Engineering</div>
+                    </div>
+                    <div class="exp-date">Sep 2022 – Nov 2024</div>
+                </div>
+                <p class="exp-date" style="margin-bottom: 16px;">Bangalore, India</p>
                 <div class="exp-description">
                     <ul>
                         <li>Designed end-to-end ETL and data integration pipelines (SQL, SSIS, SSAS, SSRS) for supply chain planning clients across USA, Japan, and India.</li>
@@ -543,11 +703,15 @@
                 </div>
             </div>
 
-            <!-- Accenture -->
-            <div class="experience-card">
-                <div class="exp-company">Accenture</div>
-                <div class="exp-role">Application Development Senior Analyst</div>
-                <div class="exp-meta">Nov 2018 – Sep 2022 · Bangalore, India</div>
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div>
+                        <div class="exp-company">Accenture</div>
+                        <div class="exp-role">Application Development Senior Analyst</div>
+                    </div>
+                    <div class="exp-date">Nov 2018 – Sep 2022</div>
+                </div>
+                <p class="exp-date" style="margin-bottom: 16px;">Bangalore, India</p>
                 <div class="exp-description">
                     <ul>
                         <li>Built full-stack features for a pharma-giant Data Management platform (ASP.NET, SQL Server DW); designed SSAS OLAP cubes for region-wise analytics during COVID-19.</li>
@@ -561,41 +725,114 @@
 
     <!-- Hackathons Section -->
     <section id="hackathons">
-        <h2 class="section-heading">Hackathon Wins</h2>
-        <div class="hackathon-grid">
-            <!-- CustomerZero -->
-            <div class="hackathon-card">
-                <div class="hackathon-badge">1st Place</div>
-                <h3 class="hackathon-title">CustomerZero</h3>
-                <p class="hackathon-desc">Intent-based lead generation tool for pre-seed founders that turns a pasted domain into a product brief and focused ICP hypothesis in ~60 seconds. Runs an agent swarm that hunts the web for live pain signals from matching prospects.</p>
-                <div class="hackathon-details">
-                    <div><strong>Event:</strong> Bay Builders Hackathon (InsForge Track)</div>
-                    <div><strong>Date:</strong> July 2026</div>
-                    <div><strong>Stack:</strong> InsForge, HydraDB, Nimble, Tavily, You.com, Kylon</div>
+        <div class="container">
+            <h2>Hackathon Wins</h2>
+            <div class="hackathon-grid">
+                <div class="hackathon-card">
+                    <div class="badge">🏆 1st Place</div>
+                    <h3 class="hackathon-title">CustomerZero</h3>
+                    <p class="hackathon-desc">Intent-based lead generation tool for pre-seed founders that turns a pasted domain into a product brief and focused ICP hypothesis in ~60 seconds. Runs an agent swarm hunting the web for live pain signals from matching prospects.</p>
+                    <div class="hackathon-meta">
+                        <div><strong>Event:</strong> Bay Builders Hackathon (InsForge Track)</div>
+                        <div><strong>Date:</strong> July 2026</div>
+                        <div><strong>Stack:</strong> InsForge, HydraDB, Nimble, Tavily, You.com</div>
+                    </div>
+                </div>
+
+                <div class="hackathon-card">
+                    <div class="badge">🏆 1st Place</div>
+                    <h3 class="hackathon-title">Meal Prep</h3>
+                    <p class="hackathon-desc">Transforms raw cooking videos into an interactive Neo4j knowledge graph. An OpenAI-powered agent answers questions and jumps to exact moments. Ingredients merge into single nodes as the graph grows smarter with each source.</p>
+                    <div class="hackathon-meta">
+                        <div><strong>Event:</strong> Hack the Video Agent Context Graph</div>
+                        <div><strong>Date:</strong> July 2026</div>
+                        <div><strong>Stack:</strong> TwelveLabs, Neo4j, OpenAI, AWS</div>
+                    </div>
+                </div>
+
+                <div class="hackathon-card">
+                    <div class="badge">🏆 1st Place</div>
+                    <h3 class="hackathon-title">FoundersFYI</h3>
+                    <p class="hackathon-desc">Multi-agent system orchestrating research, strategy, and content generation to help early-stage founders build momentum on LinkedIn. Integrated real-time analytics, personalized GTM messaging, and autonomous persona research.</p>
+                    <div class="hackathon-meta">
+                        <div><strong>Event:</strong> Marketing Agents Hackathon</div>
+                        <div><strong>Date:</strong> April 2026</div>
+                        <div><strong>Stack:</strong> Apify, Claude AI, MindAI</div>
+                    </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Meal Prep -->
-            <div class="hackathon-card">
-                <div class="hackathon-badge">1st Place</div>
-                <h3 class="hackathon-title">Meal Prep</h3>
-                <p class="hackathon-desc">Transforms raw cooking videos into an interactive Neo4j knowledge graph of what is shown, said, and written. An OpenAI-powered agent answers questions and jumps to the exact moment; ingredients merge into single nodes as the graph grows smarter.</p>
-                <div class="hackathon-details">
-                    <div><strong>Event:</strong> Hack the Video Agent Context Graph Hackathon</div>
-                    <div><strong>Date:</strong> July 2026</div>
-                    <div><strong>Stack:</strong> TwelveLabs, Neo4j, OpenAI, AWS</div>
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2>Notable Projects & Work</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3 class="project-title">Agentic AI Systems</h3>
+                    <p class="project-desc">Built multi-agent orchestration systems using Claude AI, Anthropic APIs, and autonomous agent swarms. Developed knowledge graph extraction pipelines and intent-based intelligence systems.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Claude AI</span>
+                        <span class="tech-tag">Multi-Agent</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Anthropic API</span>
+                    </div>
                 </div>
-            </div>
 
-            <!-- FoundersFYI -->
-            <div class="hackathon-card">
-                <div class="hackathon-badge">1st Place</div>
-                <h3 class="hackathon-title">FoundersFYI</h3>
-                <p class="hackathon-desc">Social media marketing agent orchestrating research, strategy, and content generation to help early-stage founders build momentum on LinkedIn. Integrated real-time LinkedIn analytics, personalized GTM messaging, and autonomous founder-persona research.</p>
-                <div class="hackathon-details">
-                    <div><strong>Event:</strong> Marketing Agents Hackathon</div>
-                    <div><strong>Date:</strong> April 2026</div>
-                    <div><strong>Stack:</strong> Apify, Claude AI, MindAI</div>
+                <div class="project-card">
+                    <h3 class="project-title">Knowledge Graphs & Neo4j</h3>
+                    <p class="project-desc">Designed and implemented knowledge graph systems for semantic data extraction from unstructured sources. Real-time graph visualization and intelligent querying systems.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Neo4j</span>
+                        <span class="tech-tag">Graph DB</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">OpenAI</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3 class="project-title">Data Warehousing & BI</h3>
+                    <p class="project-desc">End-to-end data warehouse design and BI solutions for enterprise clients. ETL pipeline optimization, OLAP cube modeling, and reporting automation for supply chain analytics.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">SQL Server</span>
+                        <span class="tech-tag">SSIS</span>
+                        <span class="tech-tag">SSAS</span>
+                        <span class="tech-tag">SSRS</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3 class="project-title">Full-Stack Applications</h3>
+                    <p class="project-desc">Built production applications using ASP.NET, Next.js, and TypeScript. Implemented microservices architecture, CI/CD pipelines, and cloud deployment strategies.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">ASP.NET</span>
+                        <span class="tech-tag">Next.js</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">AWS</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3 class="project-title">Machine Learning Pipelines</h3>
+                    <p class="project-desc">Developed ML models for predictive analytics, compressive sensing, and signal processing. Training and inference pipelines with model optimization and deployment.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">ML</span>
+                        <span class="tech-tag">TensorFlow</span>
+                        <span class="tech-tag">Signal Processing</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3 class="project-title">Real-Time Analytics</h3>
+                    <p class="project-desc">Designed real-time data processing systems for live analytics and monitoring. Built dashboards and visualization systems for business intelligence reporting.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">AWS Lambda</span>
+                        <span class="tech-tag">DynamoDB</span>
+                        <span class="tech-tag">Real-time</span>
+                        <span class="tech-tag">Analytics</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -603,55 +840,63 @@
 
     <!-- Skills Section -->
     <section id="skills">
-        <h2 class="section-heading">Technical Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-category">
-                <h3>Languages & Frameworks</h3>
-                <div class="skill-items">
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">SQL</span>
-                    <span class="skill-tag">ASP.NET</span>
-                    <span class="skill-tag">C++</span>
-                    <span class="skill-tag">TypeScript</span>
-                    <span class="skill-tag">Next.js</span>
-                    <span class="skill-tag">Tailwind CSS</span>
+        <div class="container">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Languages & Frameworks</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">Python</span>
+                        <span class="skill-item">SQL</span>
+                        <span class="skill-item">ASP.NET</span>
+                        <span class="skill-item">C++</span>
+                        <span class="skill-item">TypeScript</span>
+                        <span class="skill-item">Next.js</span>
+                        <span class="skill-item">Tailwind CSS</span>
+                        <span class="skill-item">HTML/CSS</span>
+                    </div>
                 </div>
-            </div>
 
-            <div class="skill-category">
-                <h3>Data & BI</h3>
-                <div class="skill-items">
-                    <span class="skill-tag">MSBI</span>
-                    <span class="skill-tag">SSAS</span>
-                    <span class="skill-tag">SSIS</span>
-                    <span class="skill-tag">SSRS</span>
-                    <span class="skill-tag">Data Warehouse</span>
-                    <span class="skill-tag">ETL Pipelines</span>
-                    <span class="skill-tag">OLAP Cubes</span>
+                <div class="skill-category">
+                    <h3>Data & BI</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">MSBI Suite</span>
+                        <span class="skill-item">SSAS</span>
+                        <span class="skill-item">SSIS</span>
+                        <span class="skill-item">SSRS</span>
+                        <span class="skill-item">Data Warehouse</span>
+                        <span class="skill-item">ETL Pipelines</span>
+                        <span class="skill-item">OLAP Cubes</span>
+                        <span class="skill-item">SQL Server</span>
+                    </div>
                 </div>
-            </div>
 
-            <div class="skill-category">
-                <h3>AI / ML & Agents</h3>
-                <div class="skill-items">
-                    <span class="skill-tag">Agentic AI</span>
-                    <span class="skill-tag">Multi-Agent Systems</span>
-                    <span class="skill-tag">Knowledge Graphs</span>
-                    <span class="skill-tag">Neo4j</span>
-                    <span class="skill-tag">RAG</span>
-                    <span class="skill-tag">Machine Learning</span>
+                <div class="skill-category">
+                    <h3>AI / ML & Agents</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">Agentic AI</span>
+                        <span class="skill-item">Multi-Agent Systems</span>
+                        <span class="skill-item">Knowledge Graphs</span>
+                        <span class="skill-item">Neo4j</span>
+                        <span class="skill-item">RAG Systems</span>
+                        <span class="skill-item">Machine Learning</span>
+                        <span class="skill-item">Claude AI</span>
+                        <span class="skill-item">OpenAI APIs</span>
+                    </div>
                 </div>
-            </div>
 
-            <div class="skill-category">
-                <h3>Cloud & DevOps</h3>
-                <div class="skill-items">
-                    <span class="skill-tag">AWS</span>
-                    <span class="skill-tag">EC2</span>
-                    <span class="skill-tag">S3</span>
-                    <span class="skill-tag">Lambda</span>
-                    <span class="skill-tag">Git</span>
-                    <span class="skill-tag">CI/CD</span>
+                <div class="skill-category">
+                    <h3>Cloud & DevOps</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">AWS (EC2, S3, Lambda)</span>
+                        <span class="skill-item">DynamoDB</span>
+                        <span class="skill-item">CloudWatch</span>
+                        <span class="skill-item">ECS Fargate</span>
+                        <span class="skill-item">Git</span>
+                        <span class="skill-item">CI/CD</span>
+                        <span class="skill-item">Agile/Scrum</span>
+                        <span class="skill-item">Microservices</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -659,29 +904,106 @@
 
     <!-- Education Section -->
     <section id="education">
-        <h2 class="section-heading">Education</h2>
-        <div class="education-card">
-            <div class="edu-school">San José State University</div>
-            <div class="edu-degree">M.S. Engineering – Applied Data Science</div>
-            <div class="edu-meta">Aug 2025 – Present · San Jose, CA, USA</div>
+        <div class="container">
+            <h2>Education</h2>
+
+            <div class="education-item">
+                <div class="education-school">San José State University</div>
+                <div class="education-degree">M.S. Engineering – Applied Data Science</div>
+                <div class="education-meta">Aug 2025 – Present · San Jose, CA, USA</div>
+            </div>
+
+            <div class="education-item">
+                <div class="education-school">Bangalore Institute of Technology</div>
+                <div class="education-degree">B.E. Electronics & Communication Engineering</div>
+                <div class="education-meta">2014 – 2018 · Bangalore, India</div>
+            </div>
         </div>
-        <div class="education-card">
-            <div class="edu-school">Bangalore Institute of Technology</div>
-            <div class="edu-degree">B.E. Electronics & Communication Engineering</div>
-            <div class="edu-meta">2014 – 2018 · Bangalore, India</div>
+    </section>
+
+    <!-- Research & Publications Section -->
+    <section id="research">
+        <div class="container">
+            <h2>Research & Publications</h2>
+
+            <div class="research-item">
+                <h3 class="research-title">Target Doppler Analysis Using Compressive Sensing Technique – A Simulation Study</h3>
+                <p class="research-meta">Publication · LRDE / DRDO Research Laboratory</p>
+                <p>Compressive sensing techniques applied to signal processing and radar applications for optimal target detection and analysis.</p>
+            </div>
+
+            <h3 style="font-size: 20px; margin: 32px 0 16px; color: var(--text-dark);">Certifications</h3>
+            <div class="research-item" style="margin-bottom: 16px;">
+                <h3 class="research-title">Agentic AI – Certification Program</h3>
+                <p class="research-meta">Completed · Advanced AI Systems</p>
+            </div>
+
+            <div class="research-item">
+                <h3 class="research-title">Mathematics for Machine Learning & Data Science</h3>
+                <p class="research-meta">Coursera · DeepLearning.AI</p>
+            </div>
+
+            <h3 style="font-size: 20px; margin: 32px 0 16px; color: var(--text-dark);">Awards</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                <div class="research-item">
+                    <h3 class="research-title">🏆 3× 1st Place Hackathon Winner</h3>
+                    <p class="research-meta">2026 · Bay Builders, Video Agent, Marketing Agents</p>
+                </div>
+                <div class="research-item">
+                    <h3 class="research-title">⭐ Rock Star ASE Employee</h3>
+                    <p class="research-meta">Accenture · 2019</p>
+                </div>
+                <div class="research-item">
+                    <h3 class="research-title">🎖️ Certificate of Appreciation</h3>
+                    <p class="research-meta">o9 Solutions · Execution Core Value</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Connect Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Connect With Me</h2>
+            <div class="links-grid">
+                <a href="mailto:roopa.devihosur76@gmail.com" class="link-card">
+                    <div class="link-icon">✉️</div>
+                    <h3>Email</h3>
+                </a>
+                <a href="https://github.com/roopadevihosur-07" target="_blank" class="link-card">
+                    <div class="link-icon">🐙</div>
+                    <h3>GitHub</h3>
+                </a>
+                <a href="https://linkedin.com/in/roopadevihosur" target="_blank" class="link-card">
+                    <div class="link-icon">💼</div>
+                    <h3>LinkedIn</h3>
+                </a>
+                <a href="https://devpost.com" target="_blank" class="link-card">
+                    <div class="link-icon">🚀</div>
+                    <h3>DevPost</h3>
+                </a>
+                <a href="tel:+13528308555" class="link-card">
+                    <div class="link-icon">📞</div>
+                    <h3>Phone</h3>
+                </a>
+                <a href="https://linkedin.com/in/roopadevihosur" target="_blank" class="link-card">
+                    <div class="link-icon">🔗</div>
+                    <h3>More Links</h3>
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer id="contact">
-        <p>Built with precision. Designed with intent.</p>
+    <footer>
+        <p>Crafted with precision. Built with passion.</p>
         <div class="footer-links">
             <a href="mailto:roopa.devihosur76@gmail.com">Email</a>
-            <a href="https://linkedin.com/in/roopadevihosur" target="_blank">LinkedIn</a>
             <a href="https://github.com/roopadevihosur-07" target="_blank">GitHub</a>
-            <a href="tel:+13528308555">Call</a>
+            <a href="https://linkedin.com/in/roopadevihosur" target="_blank">LinkedIn</a>
+            <a href="https://devpost.com" target="_blank">DevPost</a>
         </div>
-        <p style="margin-top: var(--spacing-40); opacity: 0.6;">© 2026 Roopa Gangadhar Devihosur. All rights reserved.</p>
+        <p style="margin-top: 32px; opacity: 0.6; font-size: 12px;">© 2026 Roopa Gangadhar Devihosur. All rights reserved.</p>
     </footer>
 </body>
 </html>

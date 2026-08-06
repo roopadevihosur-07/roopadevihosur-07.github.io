@@ -1179,7 +1179,7 @@
                         <div><strong>Stack:</strong> InsForge, HydraDB, Nimble, Tavily, You.com</div>
                     </div>
                     <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border-color);">
-                        <a href="https://github.com/roopadevihosur-07/Bay-builders-Hackathon" target="_blank" rel="noopener noreferrer" class="github-link" onclick="window.open('https://github.com/roopadevihosur-07/Bay-builders-Hackathon', '_blank'); return false;" style="display: inline-flex; align-items: center; gap: 8px; color: var(--primary-color); text-decoration: none; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
+                        <a href="https://github.com/roopadevihosur-07/Bay-builders-Hackathon" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; color: var(--primary-color); text-decoration: none; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
                             <span>→</span> View on GitHub
                         </a>
                     </div>
@@ -1195,7 +1195,7 @@
                         <div><strong>Stack:</strong> TwelveLabs, Neo4j, OpenAI, AWS</div>
                     </div>
                     <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border-color);">
-                        <a href="https://github.com/roopadevihosur-07/MealPrep_VideoContexGraph" target="_blank" rel="noopener noreferrer" class="github-link" onclick="window.open('https://github.com/roopadevihosur-07/MealPrep_VideoContexGraph', '_blank'); return false;" style="display: inline-flex; align-items: center; gap: 8px; color: var(--primary-color); text-decoration: none; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
+                        <a href="https://github.com/roopadevihosur-07/MealPrep_VideoContexGraph" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; color: var(--primary-color); text-decoration: none; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
                             <span>→</span> View on GitHub
                         </a>
                     </div>
@@ -1211,7 +1211,7 @@
                         <div><strong>Stack:</strong> Apify, Claude AI, MindAI</div>
                     </div>
                     <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border-color);">
-                        <a href="https://github.com/roopadevihosur-07/Founders.FYI" target="_blank" rel="noopener noreferrer" class="github-link" onclick="window.open('https://github.com/roopadevihosur-07/Founders.FYI', '_blank'); return false;" style="display: inline-flex; align-items: center; gap: 8px; color: var(--primary-color); text-decoration: none; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
+                        <a href="https://github.com/roopadevihosur-07/Founders.FYI" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; color: var(--primary-color); text-decoration: none; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
                             <span>→</span> View on GitHub
                         </a>
                     </div>
@@ -1526,18 +1526,6 @@
                 const scrolled = window.pageYOffset;
                 heroImage.style.transform = `scale(1.05) translateY(${scrolled * 0.5}px)`;
             }
-        });
-
-        // Handle GitHub links with explicit click event
-        document.querySelectorAll('.github-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                const url = this.getAttribute('href');
-                if (url) {
-                    window.open(url, '_blank');
-                }
-            });
         });
     </script>
 </body>

@@ -533,7 +533,7 @@
             transition: all 0.4s ease;
             cursor: pointer;
             position: relative;
-            overflow: hidden;
+            overflow: visible;
         }
 
         .hackathon-card::before {
@@ -607,6 +607,13 @@
 
         .hackathon-meta strong {
             color: var(--text-dark);
+        }
+
+        /* GitHub links - make absolutely clickable */
+        .hackathon-card a {
+            position: relative;
+            z-index: 100;
+            pointer-events: auto !important;
         }
 
         /* Projects Section */

@@ -727,6 +727,110 @@
         </div>
     </section>
 
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2>Professional Experience</h2>
+            <div class="experience-timeline">
+                <div class="experience-card">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+                        <div>
+                            <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 4px;">Adobe</h3>
+                            <div style="color: var(--primary); font-weight: 600; margin-bottom: 4px;">Student Ambassador</div>
+                        </div>
+                        <div style="font-size: 13px; color: var(--gray); text-transform: uppercase; letter-spacing: 0.5px;">Jul 2026 – Present</div>
+                    </div>
+                    <div style="font-size: 13px; color: var(--gray); margin-bottom: 12px;">San Jose, CA · Part-time, Hybrid</div>
+                    <p style="font-size: 15px; color: var(--gray); line-height: 1.7;">Represent Adobe at SJSU, helping students apply Adobe Express and Firefly. Lead campus conversations on Responsible AI, covering data privacy, transparency, and commercially safe generative tools.</p>
+                </div>
+
+                <div class="experience-card">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+                        <div>
+                            <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 4px;">AI & Machine Learning Club</h3>
+                            <div style="color: var(--primary); font-weight: 600; margin-bottom: 4px;">Social Media Marketing Officer</div>
+                        </div>
+                        <div style="font-size: 13px; color: var(--gray); text-transform: uppercase; letter-spacing: 0.5px;">Sep 2025 – Dec 2025</div>
+                    </div>
+                    <div style="font-size: 13px; color: var(--gray); margin-bottom: 12px;">SJSU · Internship · 4 months</div>
+                    <p style="font-size: 15px; color: var(--gray); line-height: 1.7;">Managed social media presence and created engaging content for SJSU's AI & ML Club. Designed promotional materials and coordinated content strategy to increase club visibility and membership.</p>
+                </div>
+
+                <div class="experience-card">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+                        <div>
+                            <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 4px;">o9 Solutions</h3>
+                            <div style="color: var(--primary); font-weight: 600; margin-bottom: 4px;">Technical Consultant – Supply Chain & Data Engineering</div>
+                        </div>
+                        <div style="font-size: 13px; color: var(--gray); text-transform: uppercase; letter-spacing: 0.5px;">Sep 2022 – Nov 2024</div>
+                    </div>
+                    <div style="font-size: 13px; color: var(--gray); margin-bottom: 12px;">Bangalore, India</div>
+                    <p style="font-size: 15px; color: var(--gray); line-height: 1.7;">Designed end-to-end ETL pipelines (SQL, SSIS, SSAS, SSRS) for supply chain clients. Led platform migrations and performance-tuning initiatives. Awarded "Certificate of Appreciation" for exemplifying Execution core value.</p>
+                </div>
+
+                <div class="experience-card">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+                        <div>
+                            <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 4px;">Accenture</h3>
+                            <div style="color: var(--primary); font-weight: 600; margin-bottom: 4px;">Application Development Senior Analyst</div>
+                        </div>
+                        <div style="font-size: 13px; color: var(--gray); text-transform: uppercase; letter-spacing: 0.5px;">Nov 2018 – Sep 2022</div>
+                    </div>
+                    <div style="font-size: 13px; color: var(--gray); margin-bottom: 12px;">Bangalore, India</div>
+                    <p style="font-size: 15px; color: var(--gray); line-height: 1.7;">Built full-stack Data Management platform features (ASP.NET, SQL Server DW). Designed SSAS OLAP cubes for region-wise analytics. Recognized as Technical SME and awarded "Rock Star ASE Employee".</p>
+                </div>
+
+                <div class="experience-card">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+                        <div>
+                            <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 4px;">LRDE / DRDO</h3>
+                            <div style="color: var(--primary); font-weight: 600; margin-bottom: 4px;">Research Project – Target Doppler Analysis</div>
+                        </div>
+                        <div style="font-size: 13px; color: var(--gray); text-transform: uppercase; letter-spacing: 0.5px;">8 months</div>
+                    </div>
+                    <div style="font-size: 13px; color: var(--gray); margin-bottom: 12px;">Research & Development</div>
+                    <p style="font-size: 15px; color: var(--gray); line-height: 1.7;">Conducted research on Target Doppler Analysis Using Compressive Sensing. Published peer-reviewed findings contributing to radar signal processing advancement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .experience-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            margin-top: 60px;
+        }
+
+        .experience-card {
+            background: white;
+            padding: 32px;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: visible;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary);
+        }
+
+        .experience-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary));
+            border-radius: 16px 0 0 16px;
+        }
+    </style>
+
     <!-- Hackathons Section -->
     <section class="light" id="hackathons">
         <div class="container">
